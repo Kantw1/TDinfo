@@ -75,15 +75,6 @@ void parcoursInfixe(pArbre a){
         parcoursInfixe(a->right); }
 }
 
-void isABR (pArbre a, int min, int max){
-if(a != NULL){
-printf("\nC'est un ABR");
-}
-if((a->num > a->left->num) && (a->num < a->right->num) &&(a->num<max)&&(a->num > min)){
-isABR
-}
-}
-
 int main(){
 srand(time(NULL));
     pArbre a = NULL;
@@ -101,6 +92,5 @@ srand(time(NULL));
     parcoursPrefixe(a);
     printf("\n");
     parcoursPrefixe(b);
-    isABR(a,a->left->num,a->right->num);
     return 0;    
 }
