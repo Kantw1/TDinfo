@@ -105,7 +105,7 @@ pArbre suppression(pArbre a,int e){
         free(tmp);
     }
     else {
-        a->left = suppMax(a->left, &e);
+        a->left = suppMax(a->left, &(a->num));
     }
     return a;
 }
