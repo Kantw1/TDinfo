@@ -57,10 +57,11 @@ void traiter(pArbre a){
 }
 
 void parcoursPrefixe(pArbre a){
-    if ( a !=NULL){
+    if (a != NULL){
         traiter(a);
         parcoursPrefixe(a->left);
-        parcoursPrefixe(a->right); }
+        parcoursPrefixe(a->right);
+    }
 }
 int min(pArbre a){
     if (existFilsGauche(a)){
@@ -95,6 +96,39 @@ void ABR(pArbre a){
         printf("Ce n'est pas un ABR\n");
     }
 }
+pArbre supprimerFilsGauche(pArbre a);
+pArbre supprimerFilsDroite(pArbre a){
+    if (a == NULL){
+        return a;
+    }
+    else if (existFilsDroite(a)){
+        if(existFilsGauche(a->right)){
+            a->left = supprimerFilsGauche(a->left);
+        }   
+        else if (existFilsDroite(a->right)){
+            a->right = supprimerFilsDroite(a->right);
+        }
+        a->right = NULL;
+        free(a->right);
+        return a;
+    }
+}
+pArbre supprimerFilsGauche(pArbre a){
+    if (a == NULL){
+        return a;
+    }
+    else if (existFilsGauche(a)){
+        if(existFilsGauche(a->left)){
+            a->left = supprimerFilsGauche(a->left);
+        }   
+        else if (existFilsDroite(a->left)){
+            a->right = supprimerFilsDroite(a->right);
+        }
+        a->left = NULL;
+        free(a->left);
+        return a;
+    }
+}
 int main(){
     pArbre a = NULL;
     a = creerArbre(11);
@@ -110,6 +144,8 @@ int main(){
 
     parcoursPrefixe(a);
     printf("\n");
-    ABR(a); 
+    ABR(a);
+    a = supprimerFilsGauche(a);
+    parcoursPrefixe(a);
     return 0;
 }

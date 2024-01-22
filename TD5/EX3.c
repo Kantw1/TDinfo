@@ -85,7 +85,7 @@ pArbre suppression(pArbre a, int nombre){
     else if (nombre < a->nb){
         a->left = suppression(a->left,nombre);
     }
-    else if (nombre>a->nb){
+    else if (nombre > a->nb){
         a->right = suppression(a->right,nombre);
     }
     else if (!existFilsGauche(a)){

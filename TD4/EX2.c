@@ -109,19 +109,17 @@ void supprimerFilsDroite(pArbre a){
 }
 
 void supprimerFilsGauche(pArbre a){
-
-    if (a == NULL){
+    if (a ==NULL){
         exit(1);
     }
-    else if(existFilsGauche(a) == 1){
-        if( existFilsGauche(a->left) == 1){
+    else if(existFilsGauche(a)){
+        if (existFilsGauche(a->left)){
             supprimerFilsGauche(a->left);
         }
-        else if( existFilsDroite(a->left) == 1){
+        else if(existFilsDroite(a->left)){
             supprimerFilsDroite(a->left);
         }
-
-        a->left = NULL;
+        a->left =NULL;
         free(a->left);
     }
 }

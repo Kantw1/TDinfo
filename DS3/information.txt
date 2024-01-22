@@ -1,0 +1,49 @@
+Exercice 3:
+1. Trier le fichier par ordre décroissant sur l'identifiant de l'étudiant :
+```bash
+sort -k1,1nr etudiants.txt
+```
+
+2. Trier le fichier par ordre croissant sur l'année d'étude et le nom, puis afficher les champs nom, année d'étude et note :
+```bash
+sort -k4,4n -k3,3 etudiants.txt | awk '{print $3, $4, $5}'
+```
+
+3. Chercher les étudiants de nom « Culberston » (en ignorant la case) et afficher leurs détails en majuscule :
+```bash
+grep -i 'Culberston' etudiants.txt | tr 'a-z' 'A-Z'
+```
+
+Ces commandes utilisent les utilitaires de ligne de commande tels que `sort`, `awk`, `grep`, et `tr` pour effectuer les opérations demandées. Assurez-vous d'exécuter ces commandes dans le répertoire contenant le fichier "etudiants.txt".
+
+Exercice 4:
+1. **Différence entre la racine « root / » du système de fichiers et le répertoire de connexion de l’utilisateur :**
+   - La racine du système de fichiers, notée "/", est le point de départ de l'arborescence des fichiers dans un système Unix/Linux. C'est la base de la hiérarchie, et tous les fichiers et répertoires se trouvent sous la racine.
+   - Le répertoire de connexion de l'utilisateur, noté "~" (tilde), représente le répertoire personnel de l'utilisateur. C'est le dossier dans lequel l'utilisateur se trouve après la connexion. Il peut contenir des fichiers et des sous-répertoires propres à cet utilisateur.
+
+2. **Fonctionnement du tube « | » dans la commande « cmd1 | cmd2 » :**
+   - Le symbole « | » est un tube (pipe) qui relie la sortie standard (stdout) de la commande `cmd1` à l'entrée standard (stdin) de la commande `cmd2`.
+   - Cela permet de chaîner les commandes ensemble, où la sortie de la première devient l'entrée de la seconde, permettant ainsi le traitement en flux de données.
+
+3. **Différence entre un chemin absolu et un chemin relatif :**
+   - Un chemin absolu spécifie le chemin complet d'un fichier ou répertoire depuis la racine du système de fichiers. Il commence toujours par "/".
+   - Un chemin relatif spécifie le chemin d'un fichier ou répertoire par rapport au répertoire de travail actuel. Il ne commence pas par "/" et dépend du contexte du répertoire courant.
+
+4. **Différents types de fichiers dans le système de fichiers de Linux :**
+   - Fichiers réguliers (texte, binaire).
+   - Répertoires.
+   - Fichiers spéciaux (périphériques de bloc, de caractère).
+   - Liens symboliques.
+   - Fichiers de périphériques.
+   - Fichiers de sockets.
+   - Fichiers de tubes (pipes).
+
+5. **Fonctionnement des droits d'accès pour un fichier :**
+   - Les droits d'accès sont définis pour trois catégories d'utilisateurs : propriétaire, groupe, et autres.
+   - Les droits sont représentés par trois types d'autorisations : lecture (r), écriture (w), et exécution (x).
+   - Les combinaisons de ces autorisations définissent les droits pour chaque catégorie.
+   - Les commandes telles que `chmod` permettent de modifier les droits d'accès.
+
+6. **Signification de la chaîne « 2>&1 » dans une commande :**
+   - Cette chaîne redirige la sortie d'erreur standard (stderr, 2) vers la même destination que la sortie standard (stdout, 1).
+   - Cela permet de regrouper les sorties standard et d'erreur dans un seul flux, facilitant leur gestion lors de l'exécution de commandes.
