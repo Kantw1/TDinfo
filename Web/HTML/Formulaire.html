@@ -1,0 +1,45 @@
+<!DOCTYPE html
+><html>
+    <head>
+        <title>Page web</title>
+    </head>
+
+    <body>
+        <h2><a>Sign in</a></h2>
+        <form action="https://www.cafe-it.fr/cytech/post.php" method="POST">
+            <label>Email:
+            <input type="text" name="Email" id="Email" value="Email"/>
+            </label>
+            <br />
+            <label>Mot de passe :
+            <input type="password" name="MDP" id="MDP" value="MDP"/>
+            </label>
+            <br />
+            <label>numéro étudiant :
+            <input type="number" name="Num_etu" id="Num_etu"/>
+            </label>
+            <br />
+            <label FOR="groupe">Groupe
+                <select name="groupe" id="groupe">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    </select>
+            </label>
+            <br />
+            <p>Please select your favorite Drink: <br />
+                <input type="radio" name="drink" value="tea" checked="checked"/> Tea
+                <input type="radio" name="drink" value="coffee"/> coffee
+                <input type="radio" name="drink" value="milk"/> Milk
+                </p>
+                <p>Please select your favorite social media applications: <br/>
+                    <input type="checkbox" name="mediaF" value="facebook"/>Facebook
+                    <input type="checkbox" name="mediaT" value="twitter" checked="checked"/>twitter
+                    <input type="checkbox" name="mediaW" value="whatsup"/>whatsapp
+                    </p>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
